@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}{% endblock title %} - David</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <h1>E-testy</h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a class="pojistenci" href="{{url_for('vypis_zkousek.vypis')}}">Zkoušky</a></li>
+                {% if g.usre %}
+                    <li><span class="uzivatel">{{ g.user['jmeno'] }}</span></li>
+                    <li><a class="pojistenci" href="{{ url_for('auth.logout') }}">Odhlásit</a></li>
+                {% else %}
+                    <li>Nepřihlášen</li>
+                    <li></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <article class="content">
+        <header>
+            {% block header %}{% endblock header %}
+        </header>
+        <section>
+            {% for message in get_flashed_messages() %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+            {% block content %}{% endblock content %}
+        </section>
+        {% block footer %}{% endblock footer %}
+    </article>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% {% extends "base.html" %} %}
+
+{% block header %}
+    <h1>{% block title %}Registrace uživatele{% endblock title %}</h1>
+{% endblock header %}
+
+{% block content %}
+    <form method='POST'>
+        <div class="sloupec_formulare">
+            <label for="jmeno">Jmeno</label>
+            <input name="jmeno" id="jmeno" required>
+
+            <label for="prijmeni">Přijmeni</label>
+            <input name="prijmeni" id="prijmeni" required>
+
+            <label for="heslo">Heslo</label>
+            <input type="password" name="heslo" id="heslo" required>
+            <input class="ulozit" type="submit" value="registrovat">
+        </div>
+    </form>
+{% endblock content %}
