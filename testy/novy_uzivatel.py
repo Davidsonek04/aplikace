@@ -3,31 +3,31 @@ from flask import Blueprint, flash, g, render_template, redirect, url_for, reque
 from werkzeug.security import generate_password_hash
 from testy.db import get_db
 
-bp = Blueprint('novy_uzivatel', __name__)
+bp = Blueprint('/novy_uzivatel', __name__)
 
 @bp.route('/novy_uzivatel', methods= ('GET', 'POST'))
 def vytvor_uzivatele():
     if request.method == 'POST':
         jmeno = request.form['jmeno']
-        prijmeni = request.form['prijmeni']
+        email = request.form['email']
         heslo = request.form['heslo']
         db = get_db()
         error = None
         
-        if (not jmeno) or (not prijmeni) or (not heslo):
-            error = f'Všechny políčka jsou povinné!!!'
+        if (not jmeno) or (not email) or (not heslo):
+            error = 'Všechny políčka jsou povinné!!!'
 
         test = db.execute(
-            'SELECT jmeno, prijmeni FROM uzivatele WHERE jmeno = ? AND prijmeni = ?', (jmeno, prijmeni,)
+            'SELECT email FROM uzivatele WHERE email = ?', (email,)
         ).fetchone()
         
-        if jmeno == test['jmeno'] and prijmeni == test['prijmeni']:
-            error = f'Uživatel je již zaregistrovaný'
+        if email == test:
+            error = 'Uživatel je již zaregistrovaný'
 
         if error is None:
             db.execute(
-                'INSERT INTO uzivatele (jmeno, prijmeni, heslo) VALUES (?, ?, ?)',
-                (jmeno, prijmeni, generate_password_hash(heslo),),
+                'INSERT INTO uzivatele (jmeno, email, heslo) VALUES (?, ?, ?)',
+                (jmeno, email, generate_password_hash(heslo),),
             )
             db.commit()
             # TODO dopsat adresu kam se má přesměrovat stránka po vytvoření uživatele

@@ -13,7 +13,7 @@
         <nav class="menu">
             <ul>
                 <li><a class="pojistenci" href="{{url_for('vypis_zkousek.vypis')}}">Zkoušky</a></li>
-                {% if g.usre %}
+                {% if g.user %}
                     <li><span class="uzivatel">{{ g.user['jmeno'] }}</span></li>
                     <li><a class="pojistenci" href="{{ url_for('auth.logout') }}">Odhlásit</a></li>
                 {% else %}

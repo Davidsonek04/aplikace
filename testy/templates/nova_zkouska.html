@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1 class="info">{% block title %}Nová zkouška{% endblock title %}</h1>
+{% endblock header %}
+
+{% block content %}
+    <form method='post' class="dva_sloupce">
+        <div class="sloupec_formulare">
+            <label for="nazev">Název</label>
+            <input name="nazev" id="nazev" required>
+            <label for="pocet_otazek">Pocet_otazek</label>
+            <input name="pocet_otazek" id="pocet_otazek" required>
+            <label for="cas">Čas</label>
+            <input name="cas" id="cas" required>
+
+            <input class="ulozit" type="submit" value="uložit">
+        </div>
+    </form>
+    
+    {% endblock content %}
+
+            
+            
+            
+    

@@ -1,0 +1,368 @@
+body
+{
+    font: 14px "Poppins";
+    background: white;
+    color: #414042;
+    box-sizing: border-box;
+    margin: 0;
+    
+}
+
+body > header
+{
+    height: 80px;
+    width: 100%;
+    background: rgb(110, 110, 233);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+    top: 0;
+   
+}
+
+body header a 
+{
+    text-decoration: none;
+    color: white;
+}
+
+#logo
+{
+    margin: auto 0 auto 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#logo > *
+{
+    margin: 0 80px 0 0;
+}
+
+#logo h1
+{
+    font-weight: normal;
+    font-size: 1.8em;
+    line-height: 1.2em;
+    color: white;
+}
+
+nav ul
+{
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+nav ul li
+{
+    
+    margin: 0 5px;
+    font-size: 1.4em;
+    line-height: 3em;
+}
+
+nav ul li span
+{
+    box-sizing: border-box;
+    margin-right: 20px;
+}
+
+article
+{
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 20px 10px 20px;
+}
+
+article header
+{
+    height: 80px;
+}
+
+article h1
+{
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: normal;
+}
+
+article h1,
+article h2,
+article h3
+{
+    color: black;
+}
+
+article section p
+{
+    margin-bottom: 1.5px;
+    line-height: 1.6em;
+}
+
+img {
+    float: left;
+    padding-right: 20px;
+    margin: 10px 0;
+}
+
+.menu
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+/* Tlačítka  Editovat a Delete*/ 
+.editovat
+{
+    background-color: yellowgreen;
+    color: white;
+    width: 7em;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.odstranit
+{
+    background-color: #cc2f2e;
+    color: white;
+    width: 7em;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.editovat:hover
+{
+    filter: brightness(110%) contrast(90%);
+}
+
+.odstranit:hover
+{
+    filter: brightness(130%) contrast(90%);
+}
+
+
+
+.vizitka
+{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.email
+{
+    margin-right: 50px;
+}
+
+.user_name
+{
+    color: black;
+    font-size: 1.4em;
+    margin-top: 0; 
+}
+
+.flash 
+{ 
+    margin: 1em 0; 
+    padding: 1em; 
+    background: #cae6f6; 
+    border: 1px solid #377ba8; 
+}
+
+
+
+.info {
+    font-size: 24px;
+    color: #333;
+}
+
+/*
+.content textarea 
+{ 
+    min-height: 12em; 
+    resize: vertical;
+}
+*/
+.content input, .content textarea 
+{ 
+    margin-bottom: 1em; 
+}
+
+.content:last-child 
+{ margin-bottom: 0; }
+
+.content label 
+{ 
+    font-weight: bold; 
+    margin-bottom: 0.5em; 
+}
+
+.post > header 
+{ 
+    display: flex; 
+    align-items: flex-end; 
+    font-size: 0.85em; 
+}
+.post > header > div:first-of-type 
+{ 
+    flex: auto; 
+}
+.post > header h1 
+{ 
+    font-size: 1.5em; 
+    margin-bottom: 0; 
+}
+
+
+.content 
+{ 
+    box-sizing: border-box;
+    padding: 10px; 
+}
+
+article table
+{
+    border-collapse: collapse;
+    width: 860px;
+}
+article table tr th
+{
+    border: 1px solid grey;   
+    width: 33%;
+    padding: 10px;
+    vertical-align: center; 
+}
+
+article table tr td
+{
+    border: 1px solid grey;
+    width: 33%;
+    padding: 10px;
+    vertical-align: center;
+}
+
+
+.akce
+{
+    display: flex;
+    justify-content: center;
+}
+
+.tlacitko_zpet
+{
+    background: blue;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    margin: 10px auto;
+    width: 10em;
+}
+
+.tlacitko_zpet a
+{
+    color: white;
+    text-decoration: none;
+}
+
+.tlacitko_zpet:hover
+{
+    background-color: rgb(98, 98, 221);
+}
+
+input[type=submit] 
+{ 
+    /*align-self: start;*/ 
+    width: 10em; 
+}
+
+input 
+{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: whitesmoke;
+}
+
+.dva_sloupce
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.sloupec_formulare 
+{   
+    display: inline-block; 
+    vertical-align: top; 
+}
+
+.sloupec_formulare > *
+{
+    display: flex;
+    flex-direction: column;
+}
+
+form div label
+{
+    margin: 1em 0;
+    display: flex; 
+    flex-direction: column; 
+}
+
+.content label 
+{ 
+    font-weight: bold; 
+    margin-bottom: 0.5em; 
+    color: rgb(141, 59, 59);
+}
+.content input, .content textarea 
+{ 
+    margin-bottom: 1em; 
+    max-width: 20em;
+}
+.content textarea 
+{ 
+    min-height: 12em; 
+    resize: vertical; 
+}
+
+.ulozit
+{
+    background-color: blue;
+    color: white;
+    /*margin-top: 35px;*/
+    padding: 5px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.ulozit:hover
+{
+    filter: brightness(140%) contrast(60%);
+}
+
+.uzivatel
+{
+    color: black;
+}
+
+.pojistenci:hover
+{
+    color: black;
+}
+
+table tbody tr td a
+{
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+}

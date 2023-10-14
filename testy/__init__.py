@@ -1,7 +1,7 @@
 
 import os
 from flask import Flask
-from . import db, auth
+from . import db, auth, novy_uzivatel, vypis_zkousek, nova_zkouska
 
 
 def create_app(test_config=None):
@@ -12,6 +12,10 @@ def create_app(test_config=None):
     )
     
     # registrace Blueprintu
+    app.register_blueprint(auth.bp)
+    app.register_blueprint(novy_uzivatel.bp)
+    app.register_blueprint(vypis_zkousek.bp)
+    app.register_blueprint(nova_zkouska.bp)
     
     app.add_url_rule('/', view_func=auth.login)
     

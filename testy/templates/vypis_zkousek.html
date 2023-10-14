@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1 class="info"> {% block title %}Výpis zkoušek{% endblock title %}
+{% endblock header %}
+
+{% block content %}
+
+<table class="tabulka">
+    <thead>
+        <tr>
+            <th>Typ zkoušky</th>
+            <th>počet otázek</th>
+            <th>Čas na test</th>
+        </tr>
+    </thead>
+    {% for zkouska in zkousky %}
+    
+    <table class="tabulka">
+        <tr >
+            
+            <td><a href="{{ url_for('vypis_zkousek.vypis', zkouska_id=zkouska['id']) }}">{{ zkouska['nazev'] }}</a></td>
+            <td>{{ zkouska['pocet_otazek'] }}</td>
+            <td>{{ zkouska['cas'] }}</td>
+            
+            
+            
+        </td>
+    </tr>
+</table>
+</table>
+{% endfor %}
+{#{% if g.user['jmeno'] == 'David' %}#}
+{#}        <div class="tlacitko_zpet"><a href="{{ url_for('create.create') }}">Nová zkouška</a></div>#}
+{#{% endif %}#}
+{% endblock content %}
